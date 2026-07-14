@@ -84,30 +84,6 @@ Sample output (first rows):
 
 ## Stored procedures
 
-### `usp_CreateTicket`
-Creates a ticket after validating inputs (non-empty subject, existing active customer, existing category), and returns the new TicketID via an output parameter.
-
-```sql
-DECLARE @id INT;
-EXEC dbo.usp_CreateTicket @CustomerID=1, @CategoryID=2,
-     @Subject=N'Report totals look wrong', @Priority=N'High', @NewTicketID=@id OUTPUT;
-SELECT @id AS NewTicketID;
-```
-Result:
-
-| NewTicketID |
-|---|
-| 3001 |
-
-### `usp_ResolveTicket`
-Marks an active ticket Resolved inside a transaction with TRY/CATCH; assigns the resolving agent if the ticket was unassigned; raises a clear error if the ticket isn't found or isn't active.
-
-```sql
-EXEC dbo.usp_ResolveTicket @TicketID=3001, @AgentID=1;
-```
-Result: `(1 row affected)` — Status set to Resolved, ResolvedAt stamped. Passing a closed/invalid ID returns:
-`Msg 50010: Ticket not found or is not in an active status.`
-
 ### `usp_MonthlySummaryReport`
 Tickets raised, resolved, and average resolution hours per month and category, over a date range. Uses a half-open date range so the last day isn't missed.
 
@@ -156,25 +132,13 @@ Sample output (first rows):
 | Dev Patel | Service Desk | 407 | 45 | 4 |
 | Elena Kovacs | Service Desk | 405 | 46 | 5 |
 
-**5. Month-over-month trend** (`LAG`):
-
-| TicketMonth | Tickets | PreviousMonth | Change |
-|---|---|---|---|
-| 2025-07 | 154 | NULL | |
-| 2025-08 | 241 | 154 | +87 |
-| 2025-09 | 245 | 241 | +4 |
-| 2025-10 | 247 | 245 | +2 |
-| 2025-11 | 259 | 247 | +12 |
-
-**6. Data quality check** (UNION ALL of rule-breakers):
+**4. Data quality check** (UNION ALL of rule-breakers):
 
 | Issue | Rows |
 |---|---|
 | Resolved/Closed but missing ResolvedAt | 60 |
 | In Progress but no agent assigned | 17 |
 | Open ticket older than 30 days | 213 |
-
-(The sample data is deliberately given a few "dirty" rows so these checks find real issues, as production data always does.)
 
 ---
 
