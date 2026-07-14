@@ -48,11 +48,6 @@ GROUP BY a.AgentName, a.Team
 ORDER BY OverallRank;
 GO
 
-/*
-   
-
-
-/* 
    4. Data quality check - finds tickets that break business rules.
       (Useful to show the "investigate data issues" side of the role.)
  */
