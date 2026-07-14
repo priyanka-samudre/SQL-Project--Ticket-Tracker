@@ -102,7 +102,7 @@ Sample output (first rows):
 
 ---
 
-## Report queries (`05_report_queries.sql`)
+## Report queries
 
 **1. Ticket volume by customer** (JOIN, GROUP BY, conditional count):
 
@@ -149,7 +149,7 @@ Sample output (first rows):
 | Tab | Contents |
 |---|---|
 | **Dashboard** | 5 KPI cards + 5 charts (status pie, category bar, avg-hours-by-priority column, monthly-trend line, tier column) |
-| **Raw Data (SQL export)** | The 3,000 tickets as exported from SQL Server (IDs, dates as text) — the "before" state |
+| **Raw Data (SQL export)** |  
 | **Cleaned Data** | After cleaning: lookup IDs joined to names, dates fixed, helper columns (Month, HoursToResolve, IsResolved) and a DataQualityFlag |
 | **PivotSummary** | Summary tables (COUNTIF / AVERAGEIFS) the charts read from |
 | **Notes** | Methodology and key findings |
@@ -171,3 +171,6 @@ Headline KPIs from the dataset:
 ## Skills demonstrated
 
 Schema design with constraints and indexing · foreign-key relationships · views and calculated columns · stored procedures with validation, transactions and error handling · window functions (RANK, ROW_NUMBER, LAG) · CTEs · aggregation and conditional counts · data-quality investigation · query performance tuning (SARGability, set-based rewrites, covering indexes) · loading flat files · and reporting the results in Excel with PivotTables and charts.
+
+
+
