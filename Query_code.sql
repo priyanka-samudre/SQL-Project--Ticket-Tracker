@@ -49,28 +49,11 @@ ORDER BY OverallRank;
 GO
 
 /*
-   4. Each customer's most recent ticket (CTE + ROW_NUMBER)
-      A very common interview question - "latest row per group".
- */
-WITH Ranked AS
-(
-    SELECT
-        v.CustomerName,
-        v.TicketID,
-        v.Subject,
-        v.Status,
-        v.CreatedAt,
-        ROW_NUMBER() OVER (PARTITION BY v.CustomerName ORDER BY v.CreatedAt DESC) AS rn
-    FROM dbo.vw_TicketDetails v
-)
-SELECT CustomerName, TicketID, Subject, Status, CreatedAt
-FROM Ranked
-WHERE rn = 1
-ORDER BY CustomerName;
-GO
+   
+
 
 /* 
-   5. Data quality check - finds tickets that break business rules.
+   4. Data quality check - finds tickets that break business rules.
       (Useful to show the "investigate data issues" side of the role.)
  */
 SELECT 'Resolved/Closed but missing ResolvedAt' AS Issue, COUNT(*) AS Rows
