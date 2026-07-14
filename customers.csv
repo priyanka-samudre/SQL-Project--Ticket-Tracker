@@ -1,0 +1,16 @@
+CustomerID,CustomerName,Tier,Region,IsActive
+1,Acme Retail,Enterprise,UK & Ireland,1
+2,Bristol Logistics,Business,UK & Ireland,1
+3,Cornwall Foods,Standard,UK & Ireland,1
+4,DataFirst GmbH,Business,EMEA,1
+5,Everton Health,Enterprise,UK & Ireland,1
+6,Fjord Systems,Standard,EMEA,1
+7,Granite Bank,Enterprise,North America,1
+8,Harbour Hotels,Standard,UK & Ireland,1
+9,Iris Insurance,Business,EMEA,1
+10,Juno Media,Standard,North America,1
+11,Kite Energy,Business,UK & Ireland,1
+12,Lumen Schools,Standard,UK & Ireland,1
+13,Metro Transport,Enterprise,EMEA,1
+14,Nordic Freight,Standard,EMEA,1
+15,Orchard Pharma,Business,North America,1
