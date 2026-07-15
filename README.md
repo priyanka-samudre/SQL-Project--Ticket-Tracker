@@ -67,7 +67,7 @@ Sample output (first rows):
 | 4 | Need monthly sales report by region | Lumen Schools | Report Request | James Whitfield | Closed | 25 |
 | 5 | Error 500 when saving a new order | Fjord Systems | Bug | Dev Patel | Resolved | 10 |
 
-<img width="458" height="91" alt="image" src="https://github.com/user-attachments/assets/27121343-1efb-4f73-9dcf-4599b304d86f" />
+<img width="1000" height="200" alt="image" src="https://github.com/user-attachments/assets/27121343-1efb-4f73-9dcf-4599b304d86f" />
 
 ### `vw_OpenTickets`
 The live work queue — only Open / In Progress tickets, with an `AgeHours` column. Built on top of `vw_TicketDetails`.
