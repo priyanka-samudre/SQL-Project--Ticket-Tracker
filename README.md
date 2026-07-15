@@ -91,12 +91,12 @@ Output (first rows):
 
 **1. Ticket volume by customer** (JOIN, GROUP BY, conditional count):
 
-<img width="800" height="239" alt="image" src="https://github.com/user-attachments/assets/11b2b9ef-b963-43aa-b486-6eec8e60961a" />
+<img width="600" height="150" alt="image" src="https://github.com/user-attachments/assets/11b2b9ef-b963-43aa-b486-6eec8e60961a" />
 
 
 **2. Average resolution time by priority** (AVG/MAX, NULL handling):
 
-<img width="800" height="200" alt="image" src="https://github.com/user-attachments/assets/ea6f81dc-20b7-4284-b135-3d85fcf530b2" />
+<img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/ea6f81dc-20b7-4284-b135-3d85fcf530b2" />
 
 
 **3. Agent leaderboard** (window function `RANK`):
@@ -106,7 +106,7 @@ Output (first rows):
 
 **4. Data quality check** (UNION ALL of rule-breakers):
 
-<img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/2242f16f-f805-4ff7-aaa5-c0bc0a7a7b25" />
+<img width="400" height="100" alt="image" src="https://github.com/user-attachments/assets/2242f16f-f805-4ff7-aaa5-c0bc0a7a7b25" />
 
 ---
 
