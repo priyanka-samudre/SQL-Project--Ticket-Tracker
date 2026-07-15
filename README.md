@@ -66,7 +66,8 @@ The live work queue — only Open / In Progress tickets, with an `AgeHours` colu
 
 Output (first rows):
 
-<img width="1000" height="209" alt="image" src="https://github.com/user-attachments/assets/774f4ed6-de56-434d-8c39-9d1813a0d9ec" />
+<img width="1000" height="200" alt="image" src="https://github.com/user-attachments/assets/d00edee5-895b-483a-9fd8-b2e70331a058" />
+
 
 
 ---
