@@ -80,15 +80,10 @@ Tickets raised, resolved, and average resolution hours per month and category, o
 ```sql
 EXEC dbo.usp_MonthlySummaryReport @FromDate='2026-01-01', @ToDate='2026-06-30';
 ```
-Sample output (first rows):
+Output (first rows):
+<img width="800" height="200" alt="image" src="https://github.com/user-attachments/assets/3928fb8a-8529-42e9-97d2-1c57bc4b3575" />
 
-| TicketMonth | CategoryName | TicketsRaised | TicketsResolved | AvgHoursToResolve |
-|---|---|---|---|---|
-| 2026-01 | Bug | 50 | 40 | 35 |
-| 2026-01 | Data Issue | 45 | 35 | 42 |
-| 2026-01 | How-To Question | 48 | 36 | 48 |
-| 2026-01 | Performance | 51 | 47 | 47 |
-| 2026-01 | Report Request | 57 | 48 | 53 |
+
 
 ---
 
@@ -96,39 +91,22 @@ Sample output (first rows):
 
 **1. Ticket volume by customer** (JOIN, GROUP BY, conditional count):
 
-| CustomerName | Tier | TotalTickets | OpenNow |
-|---|---|---|---|
-| Cornwall Foods | Standard | 222 | 36 |
-| Metro Transport | Enterprise | 214 | 35 |
-| Acme Retail | Enterprise | 211 | 30 |
-| Bristol Logistics | Business | 204 | 33 |
-| Nordic Freight | Standard | 204 | 28 |
+<img width="800" height="239" alt="image" src="https://github.com/user-attachments/assets/11b2b9ef-b963-43aa-b486-6eec8e60961a" />
+
 
 **2. Average resolution time by priority** (AVG/MAX, NULL handling):
 
-| Priority | Tickets | AvgHoursToResolve | WorstCaseHours |
-|---|---|---|---|
-| High | 365 | 13 | 24 |
-| Medium | 1368 | 37 | 72 |
-| Low | 742 | 83 | 168 |
+<img width="800" height="200" alt="image" src="https://github.com/user-attachments/assets/ea6f81dc-20b7-4284-b135-3d85fcf530b2" />
+
 
 **3. Agent leaderboard** (window function `RANK`):
 
-| AgentName | Team | TicketsResolved | AvgHours | OverallRank |
-|---|---|---|---|---|
-| Sofia Lindqvist | Service Desk | 433 | 47 | 1 |
-| James Whitfield | Technical Services | 416 | 49 | 2 |
-| Marcus Boateng | Service Desk | 416 | 51 | 3 |
-| Dev Patel | Service Desk | 407 | 45 | 4 |
-| Elena Kovacs | Service Desk | 405 | 46 | 5 |
+<img width="800" height="200" alt="image" src="https://github.com/user-attachments/assets/794cbf39-d343-484d-a641-e86c33232ab9" />
+
 
 **4. Data quality check** (UNION ALL of rule-breakers):
 
-| Issue | Rows |
-|---|---|
-| Resolved/Closed but missing ResolvedAt | 60 |
-| In Progress but no agent assigned | 17 |
-| Open ticket older than 30 days | 213 |
+<img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/2242f16f-f805-4ff7-aaa5-c0bc0a7a7b25" />
 
 ---
 
