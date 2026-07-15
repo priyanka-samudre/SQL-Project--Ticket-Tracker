@@ -57,30 +57,17 @@ Key design points: CHECK constraints reject invalid tiers/priorities/statuses an
 ### `vw_TicketDetails`
 One readable row per ticket — joins in customer, category and agent names, and calculates `HoursToResolve`. Uses a LEFT JOIN to Agents so unassigned tickets aren't dropped.
 
-Sample output (first rows):
-
-| TicketID | Subject | CustomerName | CategoryName | AgentName | Status | HoursToResolve |
-|---|---|---|---|---|---|---|
-| 1 | Historic orders disappeared from view | Kite Energy | Data Issue | James Whitfield | Resolved | 124 |
-| 2 | How do I add a new user? | Bristol Logistics | How-To Question | James Whitfield | Open | NULL |
-| 3 | Search timing out during peak hours | Iris Insurance | Performance | Sofia Lindqvist | Closed | 146 |
-| 4 | Need monthly sales report by region | Lumen Schools | Report Request | James Whitfield | Closed | 25 |
-| 5 | Error 500 when saving a new order | Fjord Systems | Bug | Dev Patel | Resolved | 10 |
+Output (first rows):
 
 <img width="1000" height="200" alt="image" src="https://github.com/user-attachments/assets/27121343-1efb-4f73-9dcf-4599b304d86f" />
 
 ### `vw_OpenTickets`
 The live work queue — only Open / In Progress tickets, with an `AgeHours` column. Built on top of `vw_TicketDetails`.
 
-Sample output (first rows):
+Output (first rows):
 
-| TicketID | CustomerName | Tier | CategoryName | Priority | Status | AgentName | AgeHours |
-|---|---|---|---|---|---|---|---|
-| 2 | Bristol Logistics | Business | How-To Question | Medium | Open | James Whitfield | 7373 |
-| 21 | Bristol Logistics | Business | Data Issue | High | Open | Elena Kovacs | 4001 |
-| 23 | Metro Transport | Enterprise | Report Request | Low | In Progress | Elena Kovacs | 3327 |
-| 24 | Nordic Freight | Standard | Data Issue | Medium | Open | Unassigned | 1719 |
-| 26 | Harbour Hotels | Standard | How-To Question | Medium | Open | Unassigned | 1711 |
+<img width="1000" height="209" alt="image" src="https://github.com/user-attachments/assets/774f4ed6-de56-434d-8c39-9d1813a0d9ec" />
+
 
 ---
 
